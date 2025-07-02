@@ -1,8 +1,8 @@
 import 'package:task/features/data/models/products_model.dart';
-import 'package:task/features/domain/repositories/product_repository.dart';
+import 'package:task/features/domain/repositories/product_repositories.dart';
 
 class GetAllProducts {
-  final ProductRepository repository;
+  final ProductRepositories repository;
 
   GetAllProducts({required this.repository});
   Future<List<ProductsModel>> call() async {

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task/features/domain/repositories/favorites_repository.dart';
+import 'package:task/features/domain/repositories/favorites_repositories.dart';
 import 'package:task/features/presentation/blocs/favorite_bloc/favorite_event.dart';
 import 'package:task/features/presentation/blocs/favorite_bloc/favorite_state.dart';
 

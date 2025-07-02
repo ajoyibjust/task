@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:task/core/routes/app_router.dart';
-import 'package:task/features/data/datasources/favorites_local_datasource.dart';
+import 'package:task/features/data/datasources/favorites_local_data_source.dart';
 import 'package:task/features/data/datasources/product_remote_data_source.dart';
-import 'package:task/features/data/repository/favorites_repository_impl.dart';
-import 'package:task/features/data/repository/product_repository_impl.dart';
+import 'package:task/features/data/repositories/favorites_repositories_impl.dart';
+import 'package:task/features/data/repositories/product_repositories_impl.dart';
 import 'package:task/features/domain/useceses/get_all_products.dart';
 import 'package:task/features/presentation/blocs/favorite_bloc/favorite_bloc.dart';
 import 'package:task/features/presentation/blocs/favorite_bloc/favorite_event.dart';
@@ -17,11 +17,12 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox("products");
   await Hive.openBox("favorite");
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+ const MainApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class MainApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ProductsBloc(
             GetAllProducts(
-              repository: ProductRepositoryImpl(
+              repository: ProductRepositoriesImpl(
                 remoteDataSource: ProductRemoteDataSource(),
               ),
             ),

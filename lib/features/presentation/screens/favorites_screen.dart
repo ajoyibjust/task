@@ -24,9 +24,7 @@ class FavoritesScreen extends StatelessWidget {
             children: [
               BlocBuilder<FavoriteBloc, FavoriteState>(
                 builder: (context, state) {
-                  if (state is FavoriteLoading) {
-                    return Center(child: CircularProgressIndicator());
-                  } else if (state is FavoriteLoaded) {
+                  if (state is FavoriteLoaded) {
                     return FavoriteBodyGrid(state: state.favorite);
                   }
                   return Center(child: Text("Kutulmagan Xatolik"));

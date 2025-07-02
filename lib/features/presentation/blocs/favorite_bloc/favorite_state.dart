@@ -1,3 +1,6 @@
+
+import 'package:task/features/domain/entities/favorite_entity.dart';
+
 abstract class FavoriteState {}
 
 class FavoriteInitial extends FavoriteState {}
@@ -5,15 +8,15 @@ class FavoriteInitial extends FavoriteState {}
 class FavoriteLoading extends FavoriteState {}
 
 class FavoriteLoaded extends FavoriteState {
-  final List<Map<String, dynamic>> favorite;
+  final List<FavoriteEntity> favorite;
 
   FavoriteLoaded(this.favorite);
 }
 
 class FavoriteStatus extends FavoriteState {
-  final bool isFav;
+  final bool isFavorite;
 
-  FavoriteStatus(this.isFav);
+  FavoriteStatus(this.isFavorite);
 }
 
 class FavoriteError extends FavoriteState {
@@ -21,4 +24,3 @@ class FavoriteError extends FavoriteState {
 
   FavoriteError(this.message);
 }
-

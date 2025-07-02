@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:task/features/domain/entities/favorite_entity.dart';
+
 import 'package:task/features/presentation/widgets/favoride_widget/favorite_body_grid_container.dart';
 
 class FavoriteBodyGrid extends StatelessWidget {
-  final List<Map<String, dynamic>> state;
+  final List<FavoriteEntity> state;
   const FavoriteBodyGrid({super.key, required this.state});
 
   @override
@@ -19,7 +21,7 @@ class FavoriteBodyGrid extends StatelessWidget {
       itemCount: state.length,
       itemBuilder: (context, index) {
         final data = state[index];
-        return FavoriteBodyGridContainer(data: data,);
+        return FavoriteBodyGridContainer(data: data);
       },
     );
   }

@@ -1,7 +1,9 @@
+import 'package:task/features/domain/entities/favorite_entity.dart';
+
 abstract class FavoriteEvent {}
 
 class FavoriteAdd extends FavoriteEvent {
-  final Map<String, dynamic> product;
+  final FavoriteEntity product;
   FavoriteAdd(this.product);
 }
 
